@@ -1,0 +1,86 @@
+[
+    {
+        "columns": [
+            {
+                "name": "Id",
+                "type": "Number"
+            },
+            {
+                "name": "PostHistoryTypeId",
+                "type": "Default"
+            },
+            {
+                "name": "PostId",
+                "type": "Number"
+            },
+            {
+                "name": "RevisionGUID",
+                "type": "Default"
+            },
+            {
+                "name": "CreationDate",
+                "type": "Date"
+            },
+            {
+                "name": "UserId",
+                "type": "Number"
+            },
+            {
+                "name": "UserDisplayName",
+                "type": "Text"
+            },
+            {
+                "name": "Comment",
+                "type": "Text"
+            },
+            {
+                "name": "Text",
+                "type": "Text"
+            },
+            {
+                "name": "ContentLicense",
+                "type": "Text"
+            }
+        ],
+        "rows": [
+            [
+                163768,
+                2,
+                115610,
+                "6a442b3a-64e2-42e8-8ef0-dee84ade0a01",
+                1222098000187,
+                500,
+                null,
+                null,
+                "I'm not exactly sure when it comes to JS but I've seen similar things in other languages and it's usually because the function is only checking whether null is exactly equal to NaN (i.e. null === NaN would be false). In other words it's not that it thinks that null is in fact a number, but it's rather that null is not NaN. This is probably because both are represented differently in JS so that they won't be exactly equal, in the same way that 9 !== '9'.",
+                "CC BY-SA 2.5"
+            ],
+            [
+                163847,
+                2,
+                115652,
+                "32620ece-2505-44a5-abd2-00b4b0fc4896",
+                1222098292233,
+                500,
+                null,
+                null,
+                "There's also [FXRuby][1] which has the benefit of a Pragmatic Programmer book, as well as [wxRuby][2] which is based on the wxWidgets C++ GUI framework.\r\n\r\n\r\n  [1]: http://www.fxruby.org/\r\n  [2]: http://wxruby.org",
+                "CC BY-SA 2.5"
+            ],
+            [
+                133067,
+                2,
+                94163,
+                "8994765f-5e7f-498d-9d56-e7bcced02d87",
+                1221755324417,
+                500,
+                null,
+                null,
+                "If you want to practice while having a little fun check out [http://typeracer.com][1]\r\n\r\nIt let's you compete against other people and trust me, there's nothing better to get you typing faster than normal than a little healthy competition.\r\n\r\n\r\n  [1]: http://typeracer.com",
+                "CC BY-SA 2.5"
+            ]
+        ],
+        "messagePosition": 0,
+        "truncated": false
+    }
+]
