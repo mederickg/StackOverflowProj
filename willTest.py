@@ -111,37 +111,37 @@ with open(FILE_NAME, 'r') as f:
 
 content = None
 
-# with open('Posts.csv', 'w', newline='') as csvfile:
-#     # Create a CSV writer object
-#     writer = csv.writer(csvfile, quoting=csv.QUOTE_MINIMAL)
+with open('Posts.csv', 'w', newline='') as csvfile:
+    # Create a CSV writer object
+    writer = csv.writer(csvfile, quoting=csv.QUOTE_MINIMAL)
 
-#     for i in range(1, int(NUM_USERS/INCREMENT + 1)):
-#         low = INCREMENT * (i - 1)
-#         high = INCREMENT * i
+    for i in range(1, int(NUM_USERS/INCREMENT + 1)):
+        low = INCREMENT * (i - 1)
+        high = INCREMENT * i
 
-#         print("iteration: ", i)
-#         userIds = ids[low:high]        
+        print("iteration: ", i)
+        userIds = ids[low:high]        
 
-#         query = f""" 
-#         SELECT * FROM PostHistory WHERE UserId IN ({', '.join(map(str, userIds))});
-#         """
-#         print(query)
-#         response = makeQuery(query)
+        query = f""" 
+        SELECT * FROM PostHistory WHERE UserId IN ({', '.join(map(str, userIds))});
+        """
+        print(query)
+        response = makeQuery(query)
 
-#         print("done")
-#         if content == None:
-#             columns = []
-#             for column in response.get("columns"):
-#                 columns.append(column.get("name"))
+        print("done")
+        if content == None:
+            columns = []
+            for column in response.get("columns"):
+                columns.append(column.get("name"))
 
-#             # Write the header row
-#             writer.writerow(columns)
+            # Write the header row
+            writer.writerow(columns)
 
-#         # Loop through the JSON data and write each row to the CSV file
-#         for row in response.get("rows"):
-#             writer.writerow(row)
+        # Loop through the JSON data and write each row to the CSV file
+        for row in response.get("rows"):
+            writer.writerow(row)
 
-#         print(len(response.get("rows")))
+        print(len(response.get("rows")))
 
 # with open('data/Users.csv', 'w', newline='') as csvfile:
 #     # Create a CSV writer object
