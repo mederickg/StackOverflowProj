@@ -7,9 +7,8 @@ DIRECTORY_NAME = "data/"
 
 
 AUTH_TOKENS = [
-    "03AKH6MRGfsxcnXXHz42b-rVmvIdqyihro1nLGOC7M7__kVGYhi_RrRWbmly-9Gw9WjVJBGcC56pO9phaU2J4N4d19wcdWMwEoMbsOUtjwOBAd5zMNvCgJ3lqCSBD5TjUQbceWZ9_NEhzPhdcvOwCQX43oWccNJlb8K-cONdhLUfz3ATAIo1DwJJ7xJ1-8zBWXEk8KSUV_kJv8Dc7X0jXHP-6stRkBqCy7vb_2N6iaBkZiN6arjmAv_dLAuEAociG-omwAHY-SObhs7q2SBGRHRs1FEW-J5CmEN6YSavK5XLH8TbfJ8pwhjNisNkk6B9eZTOSrvUj5FFVsdpm_JRz93-dm-RCKVuYY7vU32kitQpvLXHIJAEqttQKFBwmuo8I0DNDMpHhREUGfamPnB5a0aCeVzy4P7aLt4iSuZgCNKv-9mPMY7lYgvdBHxohxzKipY5izVfnTNLuHGPyEuFndiDhWcqv5LVt6HItwJibkWnOFiTStqW9kBSzjmkbBiuogzvZPdThH4LHxhqWm4i4LNNwnjfPe3ndyDw",
-    "03AKH6MREVzaO5dbQnPk8EBNnsrA2f0oo9adZdp7d8Td3mHVUeFjWyyPEV10gwVK35RLN_F1HcK1yxp9x_TeFTeKh_l70QupyCLasw-jpyp2ggp172Q1Ky-oJvClOKJHaWd7k_qoPuNXkR4J7KbiRypgpafY0K19_g3TH8dGmvjukn8V4SAxSfCO58BDfFhIz-TbQCXx-Cw63MmnAt9QhjY9Vx9xY5KRVCdSpdovUjE77coT_9pbohALg_2gpwAJ9pttPg_UNqtaDAW9MGCFiLaFX5D-FCXNRsJ06_rVM8u6TPPdLhBTRhpC-d1BoG8ToEDCTERtxs3tj-sYW5TuuUsDmhKCDWyL9v41JGrE5duAQdZ6eX980cf6UZgj4m8SYPiE8yy3wgV42LM51YKA27KwIV_86qKNBSm1DqPDG_HvpZEUnMLzt9XVrknRyoXpfxV_rMxkeuhFDIFRaKmV5xIU6OhwUTcCjEHFn6OsReWFpZyLF7jbS66Ezap2IyZblebPZRMAXivGpvkBoqCO8Km3G41AbceyKz6g",
-    "03AKH6MRGko8aHTZJr7d8VXTYsXf14ANRGCl7nv4yo2rviEzYvuvg63NYdbRBppj4hIiU_dDXpEbZJ5e57bDRgcw7VctOqnK_o6Q3v3eCFUvUea_76NE0DJLGnsByinwH7ot0b7mlbFN_mRo5I1cUf6_Li-s5Y1uHJPLrQlq27dhu-B_H3KAon2zFV8nwUKYBRfA6B55WIma6A-efHq9cUJCpz2SsRY4fx0iPDapKz1S3pXb6Lg-GR9etaGr24XDJzqunOLLonT6289fSR6PDmnOzlxfYuiE-kkh9nhrD39DFV7-nhzb1yOqqPeSkoCIFX9-Eehgbl4jT181AFS-uK_xr6gy-NcsAlUYqtzBAWyojg_bQQ5c_NUGdI2j5qg1AipBaZwH1Hy_C8vyh99ALNx0I2P_iL4k4GbiamhlTrYiRujBE679A-Y3ioHbdBSRvThO0Sj2bc7ftiusCmO-ffbV_o8OaLK6Vdk6HF6SMCA3Zalh-JZSu9av7WKC1LeTcM1HoKcOctamsLT4gr9i9N87j1Tmi0Db1ZD6EQAH_AZ7Elo9OkVe7TW10"
+    "03AL8dmw9hdZaGG5gEmtEcg_AdG-aMwkHoTLynRCTQ70pzsBgnRNytmzAkYK1FHxftm2KLTj_DoXxVrALoYC254fN6mRD5a9-bZGC-PDdvyd6AHLbu6IihkePk4FDSAoc6nuC4fWh5Ux74Vv4aK5qv0ICLC5aN3T14Sl6BCCzzt2BBq-3y-KDaQMm86L7_mQPQgPQVK2RqkBm-TwlfuJ8U3mxX0WjUVe4DOs1Ibe58q938ouPJPsZf6ehpK0RGFi2QY3XQDIBC0YA0iwQLo6aQbD6AiWykmT-ZwRHTplCoUk9ywabhhv5nzJ7EgIKlOye1MboaN34bm5U5LM9KieRu4BY0sIXYKueTvk0nDcYUQWHG_ZOq1YBLqAvPm9aBzxVTxD8ROnsuzkGptrcriaf76PaoINcJgkBStWQeSGH9I6sP18ibXqWxj8wHDSAB9E931iRCZbQmALt4gNk5PYWWxFYdjpcI4X9DLzrs3PJGKpponMLZgLogL1SHBOUhdxTNUDQjXZdI2G9MzjgF3RTHGiM5JjeyF4nAzP32x1TSMcutzU3H6CNw-ORnCPpwCC_gRA0i-crvu6DY",
+    "03AL8dmw_MprK5KgNLEhs5DWjHe8SLGiQQIOncw91Hj9m5H72Ui_pFx_MdIWXHYmkXoOtANXorHnPTDSO29EqSTYqt2TrMALH7QqgS9YNPYNMGGaiSFiMrwRdDkG2vu4DrNfNauO4S1VXNAOfRxV2JjqIYTLtbGQlPzYFtFdNcadB7Ub6l71o9dBR_A6Gl6PpMV3q7-IEExNfnvK69RCTIZfVi8Ovx8zUk7CXd58S-lxGKTTGFyCYK0afFUKqs6q3WQtteZ91cV9J_4Z4WNe4-9uZQDg2GBL5gep_DKl-TMileI7BlOYEuHbiw7hSW-oMfXzQe6MAeFqrizObi5rALY8VECh467vswH_qam07OTwB_JPSjtp0BWuMOvkHIZ17zdEEJnSnaSjulfZo6SYpjZDBKLN0HfRMnd5iJBirKu0op8FmVyQe38cIIoN7ILnMq9FbnMcOeCNgj5r9Rmfvq8W41Q6p-dsNsdegvxHo5i7XA3faoaS2JIPwy09q26K87FItJN8Ns23kVJzeaq8LpSMCLxeE-xizyzfNP7fngEX7HDZFI7PQKC8usNO-zxuwXuQVDLM05gyc4"
 ]
 
 SLEEP_T = 2
@@ -39,6 +38,7 @@ def makeQuery(query, fileName=None):
 
     # create initial query
     response = requests.post(postQueryEndpoint, data = query)
+    print(response)
     response = response.json()
 
     running = response.get("running")
@@ -62,8 +62,6 @@ def makeQuery(query, fileName=None):
 
 
 # making queries
-
-
 def constructColumns(columns):
     columnNames = []
     for column in columns:
@@ -71,7 +69,7 @@ def constructColumns(columns):
     return ','.join(columnNames) + '\n'
 
 
-NUM_USERS = 2500
+NUM_USERS = 9001
 INCREMENT = 125
 
 # code used to retrieve random ids
@@ -83,7 +81,7 @@ INCREMENT = 125
 # def createUsers():
 #     print("starting query")
 #     response = makeQuery("""
-#     SELECT DISTINCT UserId FROM PostHistory
+#     SELECT DISTINCT ParentId FROM Posts
 #     """).get("rows")[1:]
 #     print("cumming")
 
@@ -123,7 +121,7 @@ with open('Posts.csv', 'w', newline='') as csvfile:
         userIds = ids[low:high]        
 
         query = f""" 
-        SELECT * FROM PostHistory WHERE UserId IN ({', '.join(map(str, userIds))});
+        SELECT * FROM Posts WHERE OwnerUserId IN ({', '.join(map(str, userIds))});
         """
         print(query)
         response = makeQuery(query)
@@ -142,6 +140,7 @@ with open('Posts.csv', 'w', newline='') as csvfile:
             writer.writerow(row)
 
         print(len(response.get("rows")))
+
 
 # with open('data/Users.csv', 'w', newline='') as csvfile:
 #     # Create a CSV writer object
