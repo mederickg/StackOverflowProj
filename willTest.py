@@ -81,7 +81,7 @@ INCREMENT = 125
 # def createUsers():
 #     print("starting query")
 #     response = makeQuery("""
-#     SELECT DISTINCT ParentId FROM Posts
+#     SELECT DISTINCT OwnerUserId FROM Posts
 #     """).get("rows")[1:]
 #     print("cumming")
 
