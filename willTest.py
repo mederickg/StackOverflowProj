@@ -7,8 +7,7 @@ DIRECTORY_NAME = "data/"
 
 
 AUTH_TOKENS = [
-    "03AL8dmw9hdZaGG5gEmtEcg_AdG-aMwkHoTLynRCTQ70pzsBgnRNytmzAkYK1FHxftm2KLTj_DoXxVrALoYC254fN6mRD5a9-bZGC-PDdvyd6AHLbu6IihkePk4FDSAoc6nuC4fWh5Ux74Vv4aK5qv0ICLC5aN3T14Sl6BCCzzt2BBq-3y-KDaQMm86L7_mQPQgPQVK2RqkBm-TwlfuJ8U3mxX0WjUVe4DOs1Ibe58q938ouPJPsZf6ehpK0RGFi2QY3XQDIBC0YA0iwQLo6aQbD6AiWykmT-ZwRHTplCoUk9ywabhhv5nzJ7EgIKlOye1MboaN34bm5U5LM9KieRu4BY0sIXYKueTvk0nDcYUQWHG_ZOq1YBLqAvPm9aBzxVTxD8ROnsuzkGptrcriaf76PaoINcJgkBStWQeSGH9I6sP18ibXqWxj8wHDSAB9E931iRCZbQmALt4gNk5PYWWxFYdjpcI4X9DLzrs3PJGKpponMLZgLogL1SHBOUhdxTNUDQjXZdI2G9MzjgF3RTHGiM5JjeyF4nAzP32x1TSMcutzU3H6CNw-ORnCPpwCC_gRA0i-crvu6DY",
-    "03AL8dmw_MprK5KgNLEhs5DWjHe8SLGiQQIOncw91Hj9m5H72Ui_pFx_MdIWXHYmkXoOtANXorHnPTDSO29EqSTYqt2TrMALH7QqgS9YNPYNMGGaiSFiMrwRdDkG2vu4DrNfNauO4S1VXNAOfRxV2JjqIYTLtbGQlPzYFtFdNcadB7Ub6l71o9dBR_A6Gl6PpMV3q7-IEExNfnvK69RCTIZfVi8Ovx8zUk7CXd58S-lxGKTTGFyCYK0afFUKqs6q3WQtteZ91cV9J_4Z4WNe4-9uZQDg2GBL5gep_DKl-TMileI7BlOYEuHbiw7hSW-oMfXzQe6MAeFqrizObi5rALY8VECh467vswH_qam07OTwB_JPSjtp0BWuMOvkHIZ17zdEEJnSnaSjulfZo6SYpjZDBKLN0HfRMnd5iJBirKu0op8FmVyQe38cIIoN7ILnMq9FbnMcOeCNgj5r9Rmfvq8W41Q6p-dsNsdegvxHo5i7XA3faoaS2JIPwy09q26K87FItJN8Ns23kVJzeaq8LpSMCLxeE-xizyzfNP7fngEX7HDZFI7PQKC8usNO-zxuwXuQVDLM05gyc4"
+    "03AL8dmw-5OAYOeeyDZusZopl0ZOemWKxs5Z5lVXJKpShY1qKIIsBV_tyipuJK9IPdK6c5QesaCmL3OnvVQAwnOJLSdZIlkXQqKNA2pHTVI8g_GGHaMJCBIDdE3rqNUEDWp24wyCqMRS-VYidD9RBVuTIyrgxeiznKwoIzRuz0lkWo_2ravC0paMhL44gCbQ5JiukZzUnlJwhCL6ZIC0ziHxzs84cNLd12hjR3xPOGSqG4KqltxRQsmu6xwe_XGGRwoGuvssOcCHAItcznIp2p9jG_-E-oQjnFOh10rQRZzLv7IcCrc95F3ecqT5FRfj1V-dGgDLoFMqMyx2MAEeg2rBXM1ke5YkDP5ShJx666kCmZzAlYWyC7jk8zIjyqFIha7Q9qY2rpEnwo3sTxVXYd6Nm6npAukzcZMZtMaYnbKjcaAe8SnyWVGhbzeOnVex8GwTHRS5wBhGjlsNoHMyICf778POaxe-v1J_3B0IeePQ1ja_6DygA-Xt34Noeu-1RCzREDJpQHGN30riftm5Nxg2xsoOn71C-pAAGf-itm1FkmqSM1IrguECQjgir6KRg-uMY-s68CUZIG"
 ]
 
 SLEEP_T = 2
@@ -38,7 +37,6 @@ def makeQuery(query, fileName=None):
 
     # create initial query
     response = requests.post(postQueryEndpoint, data = query)
-    print(response)
     response = response.json()
 
     running = response.get("running")
@@ -51,9 +49,10 @@ def makeQuery(query, fileName=None):
     # continue checking every interval for results
     while running:
         time.sleep(SLEEP_T)
+        print("??")
         response = requests.get(getEndpoint, params = {"_": time.time()}).json()
         running = response.get("running")
-    
+
     # save content to json if fileName provided
     content = response.get("resultSets")[0]
     if fileName: saveAs(fileName, content)
@@ -70,7 +69,7 @@ def constructColumns(columns):
 
 
 NUM_USERS = 9001
-INCREMENT = 125
+INCREMENT = 1801
 
 # code used to retrieve random ids
 # import random
@@ -96,6 +95,7 @@ INCREMENT = 125
 # ids = list(ids)
 
 import json
+import math
 
 FILE_NAME = "data/UserIds.json"
 
@@ -109,37 +109,35 @@ with open(FILE_NAME, 'r') as f:
 
 content = None
 
-with open('Posts.csv', 'w', newline='') as csvfile:
-    # Create a CSV writer object
-    writer = csv.writer(csvfile, quoting=csv.QUOTE_MINIMAL)
+# with open('Posts.csv', 'w', newline='') as csvfile:
+#     # Create a CSV writer object
+#     writer = csv.writer(csvfile, quoting=csv.QUOTE_MINIMAL)  
 
-    for i in range(1, int(NUM_USERS/INCREMENT + 1)):
-        low = INCREMENT * (i - 1)
-        high = INCREMENT * i
+    # for i in range(1, int(math.ceil(NUM_USERS/INCREMENT) + 1)):
+    #     low = INCREMENT * (i - 1)
+    #     high = INCREMENT * i
 
-        print("iteration: ", i)
-        userIds = ids[low:high]        
+    #     userIds = ids[low:high]
+#         query = f""" 
+#         SELECT * FROM Posts WHERE OwnerUserId IN ({', '.join(map(str, userIds))});
+#         """
 
-        query = f""" 
-        SELECT * FROM Posts WHERE OwnerUserId IN ({', '.join(map(str, userIds))});
-        """
-        print(query)
-        response = makeQuery(query)
+#         response = makeQuery(query)
 
-        print("done")
-        if content == None:
-            columns = []
-            for column in response.get("columns"):
-                columns.append(column.get("name"))
+#         print("done")
+#         if content == None:
+#             columns = []
+#             for column in response.get("columns"):
+#                 columns.append(column.get("name"))
 
-            # Write the header row
-            writer.writerow(columns)
+#             # Write the header row
+#             writer.writerow(columns)
 
-        # Loop through the JSON data and write each row to the CSV file
-        for row in response.get("rows"):
-            writer.writerow(row)
+#         # Loop through the JSON data and write each row to the CSV file
+#         for row in response.get("rows"):
+#             writer.writerow(row)
 
-        print(len(response.get("rows")))
+#         print(len(response.get("rows")))
 
 
 # with open('data/Users.csv', 'w', newline='') as csvfile:
@@ -169,45 +167,55 @@ with open('Posts.csv', 'w', newline='') as csvfile:
 #     # Create a CSV writer object
 #     writer = csv.writer(csvfile, quoting=csv.QUOTE_MINIMAL)
 
-#     query = f""" 
-#     SELECT * FROM Badges WHERE UserId IN ({', '.join(map(str, ids))});
-#     """
-#     print(query)
-#     response = makeQuery(query)
+#     for i in range(1, int(math.ceil(NUM_USERS/INCREMENT) + 1)):
+#         low = INCREMENT * (i - 1)
+#         high = INCREMENT * i
 
-#     columns = []
-#     for column in response.get("columns"):
-#         columns.append(column.get("name"))
+#         userIds = ids[low:high]
+#         query = f""" 
+#         SELECT * FROM Badges WHERE UserId IN ({', '.join(map(str, userIds))});
+#         """
 
-#     # Write the header row
-#     writer.writerow(columns)
+#         response = makeQuery(query)
 
-#     # Loop through the JSON data and write each row to the CSV file
-#     for row in response.get("rows"):
-#         writer.writerow(row)
+#         columns = []
+#         for column in response.get("columns"):
+#             columns.append(column.get("name"))
 
-#     print(len(response.get("rows")))
+#         # Write the header row
+#         writer.writerow(columns)
+
+#         # Loop through the JSON data and write each row to the CSV file
+#         for row in response.get("rows"):
+#             writer.writerow(row)
+
+#         print(len(response.get("rows")))
 
 
-# with open('data/Comments.csv', 'w', newline='') as csvfile:
-#     # Create a CSV writer object
-#     writer = csv.writer(csvfile, quoting=csv.QUOTE_MINIMAL)
+with open('data/Comments.csv', 'w', newline='') as csvfile:
+    # Create a CSV writer object
+    writer = csv.writer(csvfile, quoting=csv.QUOTE_MINIMAL)
 
-#     query = f""" 
-#     SELECT * FROM Comments WHERE UserId IN ({', '.join(map(str, ids))});
-#     """
-#     print(query)
-#     response = makeQuery(query)
+    for i in range(1, int(math.ceil(NUM_USERS/INCREMENT) + 1)):
+        low = INCREMENT * (i - 1)
+        high = INCREMENT * i
 
-#     columns = []
-#     for column in response.get("columns"):
-#         columns.append(column.get("name"))
+        userIds = ids[low:high]
+        query = f""" 
+        SELECT * FROM Comments WHERE UserId IN ({', '.join(map(str, userIds))});
+        """
 
-#     # Write the header row
-#     writer.writerow(columns)
+        response = makeQuery(query)
 
-#     # Loop through the JSON data and write each row to the CSV file
-#     for row in response.get("rows"):
-#         writer.writerow(row)
+        columns = []
+        for column in response.get("columns"):
+            columns.append(column.get("name"))
 
-#     print(len(response.get("rows")))
+        # Write the header row
+        writer.writerow(columns)
+
+        # Loop through the JSON data and write each row to the CSV file
+        for row in response.get("rows"):
+            writer.writerow(row)
+
+        print(len(response.get("rows")))
