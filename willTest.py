@@ -7,7 +7,7 @@ DIRECTORY_NAME = "data/"
 
 
 AUTH_TOKENS = [
-    "03AL8dmw-5OAYOeeyDZusZopl0ZOemWKxs5Z5lVXJKpShY1qKIIsBV_tyipuJK9IPdK6c5QesaCmL3OnvVQAwnOJLSdZIlkXQqKNA2pHTVI8g_GGHaMJCBIDdE3rqNUEDWp24wyCqMRS-VYidD9RBVuTIyrgxeiznKwoIzRuz0lkWo_2ravC0paMhL44gCbQ5JiukZzUnlJwhCL6ZIC0ziHxzs84cNLd12hjR3xPOGSqG4KqltxRQsmu6xwe_XGGRwoGuvssOcCHAItcznIp2p9jG_-E-oQjnFOh10rQRZzLv7IcCrc95F3ecqT5FRfj1V-dGgDLoFMqMyx2MAEeg2rBXM1ke5YkDP5ShJx666kCmZzAlYWyC7jk8zIjyqFIha7Q9qY2rpEnwo3sTxVXYd6Nm6npAukzcZMZtMaYnbKjcaAe8SnyWVGhbzeOnVex8GwTHRS5wBhGjlsNoHMyICf778POaxe-v1J_3B0IeePQ1ja_6DygA-Xt34Noeu-1RCzREDJpQHGN30riftm5Nxg2xsoOn71C-pAAGf-itm1FkmqSM1IrguECQjgir6KRg-uMY-s68CUZIG"
+    "",
 ]
 
 SLEEP_T = 2
@@ -73,12 +73,11 @@ INCREMENT = 1801
 
 # code used to retrieve random ids
 # import random
-# random.seed("BOOBIES")
+# random.seed("SLURPY HERPY DERP")
 
 # ids = set()
 
 # def createUsers():
-#     print("starting query")
 #     response = makeQuery("""
 #     SELECT DISTINCT OwnerUserId FROM Posts
 #     """).get("rows")[1:]
@@ -94,8 +93,8 @@ INCREMENT = 1801
 # createUsers()
 # ids = list(ids)
 
-import json
 import math
+import json
 
 FILE_NAME = "data/UserIds.json"
 
@@ -107,37 +106,36 @@ FILE_NAME = "data/UserIds.json"
 with open(FILE_NAME, 'r') as f:
     ids = json.load(f)
 
-content = None
 
-# with open('Posts.csv', 'w', newline='') as csvfile:
-#     # Create a CSV writer object
-#     writer = csv.writer(csvfile, quoting=csv.QUOTE_MINIMAL)  
+with open('Posts.csv', 'w', newline='') as csvfile:
+    # Create a CSV writer object
+    writer = csv.writer(csvfile, quoting=csv.QUOTE_MINIMAL)  
 
-    # for i in range(1, int(math.ceil(NUM_USERS/INCREMENT) + 1)):
-    #     low = INCREMENT * (i - 1)
-    #     high = INCREMENT * i
+    for i in range(1, int(math.ceil(NUM_USERS/INCREMENT) + 1)):
+        low = INCREMENT * (i - 1)
+        high = INCREMENT * i
 
-    #     userIds = ids[low:high]
-#         query = f""" 
-#         SELECT * FROM Posts WHERE OwnerUserId IN ({', '.join(map(str, userIds))});
-#         """
+        userIds = ids[low:high]
+        query = f""" 
+        SELECT * FROM Posts WHERE OwnerUserId IN ({', '.join(map(str, userIds))});
+        """
 
-#         response = makeQuery(query)
+        response = makeQuery(query)
 
-#         print("done")
-#         if content == None:
-#             columns = []
-#             for column in response.get("columns"):
-#                 columns.append(column.get("name"))
+        print("done")
+        if i == 1:
+            columns = []
+            for column in response.get("columns"):
+                columns.append(column.get("name"))
 
-#             # Write the header row
-#             writer.writerow(columns)
+            # Write the header row
+            writer.writerow(columns)
 
-#         # Loop through the JSON data and write each row to the CSV file
-#         for row in response.get("rows"):
-#             writer.writerow(row)
+        # Loop through the JSON data and write each row to the CSV file
+        for row in response.get("rows"):
+            writer.writerow(row)
 
-#         print(len(response.get("rows")))
+        print(len(response.get("rows")))
 
 
 # with open('data/Users.csv', 'w', newline='') as csvfile:
@@ -163,59 +161,4 @@ content = None
 
 #     print(len(response.get("rows")))
 
-# with open('data/Badges.csv', 'w', newline='') as csvfile:
-#     # Create a CSV writer object
-#     writer = csv.writer(csvfile, quoting=csv.QUOTE_MINIMAL)
 
-#     for i in range(1, int(math.ceil(NUM_USERS/INCREMENT) + 1)):
-#         low = INCREMENT * (i - 1)
-#         high = INCREMENT * i
-
-#         userIds = ids[low:high]
-#         query = f""" 
-#         SELECT * FROM Badges WHERE UserId IN ({', '.join(map(str, userIds))});
-#         """
-
-#         response = makeQuery(query)
-
-#         columns = []
-#         for column in response.get("columns"):
-#             columns.append(column.get("name"))
-
-#         # Write the header row
-#         writer.writerow(columns)
-
-#         # Loop through the JSON data and write each row to the CSV file
-#         for row in response.get("rows"):
-#             writer.writerow(row)
-
-#         print(len(response.get("rows")))
-
-
-with open('data/Comments.csv', 'w', newline='') as csvfile:
-    # Create a CSV writer object
-    writer = csv.writer(csvfile, quoting=csv.QUOTE_MINIMAL)
-
-    for i in range(1, int(math.ceil(NUM_USERS/INCREMENT) + 1)):
-        low = INCREMENT * (i - 1)
-        high = INCREMENT * i
-
-        userIds = ids[low:high]
-        query = f""" 
-        SELECT * FROM Comments WHERE UserId IN ({', '.join(map(str, userIds))});
-        """
-
-        response = makeQuery(query)
-
-        columns = []
-        for column in response.get("columns"):
-            columns.append(column.get("name"))
-
-        # Write the header row
-        writer.writerow(columns)
-
-        # Loop through the JSON data and write each row to the CSV file
-        for row in response.get("rows"):
-            writer.writerow(row)
-
-        print(len(response.get("rows")))
